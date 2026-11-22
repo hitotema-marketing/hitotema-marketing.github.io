@@ -1,274 +1,314 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ひとてま｜その一歩先に、ひとてまを。">
-  <title>ひとてま | その一歩先に、ひとてまを。</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8F3ED">
+  <meta name="description" content="マーケティング視点の企画・原稿から、情報設計・デザイン・実装まで。Hitotemaは、つくるその先まで考えるWeb制作を提供します。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hitotema — つくる、その先まで考える。">
+  <meta property="og:description" content="マーケティング視点の企画からデザイン・実装まで、一貫して考えるWeb制作。">
+  <title>Hitotema — つくる、その先まで考える。</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: "Helvetica Neue", "Noto Sans JP",
-        sans-serif;
-      color: #252b29;
-      background: #f8f8f5;
-      line-height: 1.9;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      height: 90px;
-      padding: 0 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-    }
-
-    nav {
-      display: flex;
-      gap: 35px;
-      font-size: 13px;
-    }
-
-    .hero {
-      min-height: 680px;
-      padding: 130px 10%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: #e9ede8;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.25em;
-      color: #718078;
-      margin-bottom: 35px;
-    }
-
-    h1 {
-      font-size: clamp(36px, 5.5vw, 68px);
-      font-weight: 400;
-      line-height: 1.6;
-      letter-spacing: 0.08em;
-    }
-
-    .hero-text {
-      margin-top: 35px;
-      font-size: 15px;
-      color: #66716b;
-      letter-spacing: 0.08em;
-    }
-
-    .section {
-      padding: 110px 10%;
-    }
-
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 0.25em;
-      color: #849087;
-      margin-bottom: 15px;
-    }
-
-    h2 {
-      font-size: 32px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      margin-bottom: 35px;
-    }
-
-    .message {
-      max-width: 760px;
-      font-size: 16px;
-      line-height: 2.5;
-    }
-
-    .concept {
-      background: #303c36;
-      color: #fff;
-    }
-
-    .concept .section-label {
-      color: #b7c3ba;
-    }
-
-    .concept h2 {
-      font-size: 38px;
-    }
-
-    .concept p {
-      max-width: 700px;
-      line-height: 2.4;
-      color: #e0e6e1;
-    }
-
-    .service-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
-      margin-top: 50px;
-    }
-
-    .service {
-      border-top: 1px solid #cbd1ca;
-      padding-top: 25px;
-    }
-
-    .service h3 {
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-
-    .service p {
-      font-size: 14px;
-      color: #68736c;
-    }
-
-    .contact {
-      background: #e9ede8;
-      text-align: center;
-    }
-
-    footer {
-      padding: 35px 8%;
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #778078;
-    }
-
-    @media (max-width: 700px) {
-      header {
-        height: 75px;
-      }
-
-      nav {
-        gap: 15px;
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: 550px;
-        padding: 90px 8%;
-      }
-
-      .section {
-        padding: 80px 8%;
-      }
-
-      .service-list {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
+:root {
+  --ht-ivory: #F8F3ED;
+  --ht-burgundy: #762F3A;
+  --ht-terracotta: #C66B55;
+  --ht-brown: #292421;
+  --ht-muted: #675c55;
+  --ht-line: #d9cdc3;
+  --ht-white: #fffdfa;
+  --ht-serif: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --ht-sans: "Noto Sans JP", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body.ht-site { margin: 0; background: var(--ht-ivory); color: var(--ht-brown); font-family: var(--ht-sans); font-size: 17px; line-height: 1.8; letter-spacing: .025em; }
+.ht-site a { color: inherit; text-decoration: none; }
+.ht-site button { font: inherit; }
+.ht-skip { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 10px 16px; transform: translateY(-150%); background: var(--ht-brown); color: var(--ht-white) !important; }
+.ht-skip:focus { transform: translateY(0); }
+.ht-header { height: 86px; padding: 0 clamp(24px, 6vw, 96px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(41,36,33,.12); position: relative; z-index: 10; background: var(--ht-ivory); }
+.ht-wordmark { font-family: var(--ht-serif); font-weight: 600; font-size: 27px; letter-spacing: .045em; line-height: 1; white-space: nowrap; }
+.ht-wordmark span { color: var(--ht-burgundy); }
+.ht-nav { display: flex; align-items: center; gap: clamp(22px, 3.1vw, 48px); font-size: 15px; font-weight: 500; }
+.ht-nav a:not(.ht-nav-cta):hover, .ht-secondary:hover { color: var(--ht-burgundy); }
+.ht-nav-cta { display: inline-flex; align-items: center; gap: 16px; padding: 10px 16px; border: 1px solid var(--ht-burgundy); border-radius: 2px; color: var(--ht-burgundy) !important; }
+.ht-nav-cta:hover { background: var(--ht-burgundy); color: var(--ht-white) !important; }
+.ht-menu-toggle, .ht-mobile-nav { display: none; }
+.ht-hero { min-height: min(880px, calc(100svh - 86px)); min-height: clamp(760px, calc(100svh - 86px), 880px); position: relative; display: grid; place-items: center; padding: 70px 24px 52px; overflow: hidden; }
+.ht-hero-inner { width: min(100%, 1030px); margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.ht-eyebrow { margin: 0 0 20px; display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: .18em; color: var(--ht-burgundy); }
+.ht-eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ht-terracotta); }
+.ht-hero h1 { margin: 0; font-family: var(--ht-serif); font-size: clamp(54px, 6.2vw, 82px); line-height: 1.35; letter-spacing: .075em; font-weight: 600; }
+.ht-period { color: var(--ht-burgundy); }
+.ht-mobile-title-break { display: none; }
+.ht-lead { margin: 20px 0 0; font-size: clamp(20px, 2.1vw, 26px); line-height: 1.7; font-weight: 600; letter-spacing: .06em; }
+.ht-description { margin: 13px 0 0; max-width: 740px; color: var(--ht-muted); font-size: 17px; line-height: 1.9; }
+.ht-approach { margin-top: 27px; display: grid; grid-template-columns: minmax(260px, 1fr) 36px minmax(260px, 1fr); align-items: center; gap: 12px; width: min(100%, 720px); }
+.ht-approach-card { min-height: 68px; padding: 10px 18px; border: 1px solid var(--ht-line); background: rgba(255,253,250,.54); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
+.ht-approach-kicker { color: var(--ht-burgundy); font-size: 11px; font-weight: 700; line-height: 1.5; letter-spacing: .08em; }
+.ht-approach-card strong { font-size: 16px; font-weight: 600; line-height: 1.5; }
+.ht-approach-join { font-family: var(--ht-serif); color: var(--ht-terracotta); font-size: 25px; }
+.ht-workflow-wrap { margin-top: 25px; width: min(100%, 900px); }
+.ht-workflow-label { margin: 0 0 12px; display: flex; justify-content: center; align-items: baseline; gap: 14px; color: var(--ht-muted); font-size: 10px; font-weight: 700; letter-spacing: .17em; }
+.ht-workflow-label span { font-size: 13px; font-weight: 500; letter-spacing: .04em; }
+.ht-workflow { height: 54px; display: grid; position: relative; grid-template-columns: repeat(5, 1fr); align-items: center; }
+.ht-flow-path { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--ht-terracotta); stroke-width: 1.3; opacity: .7; pointer-events: none; }
+.ht-flow-path path { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+.ht-flow-desktop { display: block; }
+.ht-flow-mobile { display: none; }
+.ht-hero.is-ready .ht-flow-path path { animation: ht-draw-line 1.05s cubic-bezier(.22,.61,.36,1) .14s forwards; }
+@keyframes ht-draw-line { to { stroke-dashoffset: 0; } }
+.ht-step { position: relative; z-index: 1; justify-self: center; min-width: 118px; padding: 4px 15px; display: flex; flex-direction: column; align-items: center; background: var(--ht-ivory); line-height: 1.5; }
+.ht-step span { color: var(--ht-burgundy); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.ht-step strong { font-size: 15px; font-weight: 600; white-space: nowrap; }
+.ht-actions { margin-top: 27px; display: flex; justify-content: center; align-items: center; gap: 28px; }
+.ht-primary { min-height: 54px; padding: 0 23px; display: inline-flex; align-items: center; justify-content: center; gap: 20px; background: var(--ht-burgundy); color: var(--ht-white) !important; font-size: 16px; font-weight: 600; border: 1px solid var(--ht-burgundy); transition: background .2s ease, color .2s ease; }
+.ht-primary:hover { background: transparent; color: var(--ht-burgundy) !important; }
+.ht-primary span { font-size: 18px; line-height: 1; }
+.ht-secondary { min-height: 44px; display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; }
+.ht-hero-note { margin: 13px 0 0; font-size: 14px; color: var(--ht-muted); }
+.ht-side-note { position: absolute; right: 28px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: right center; font-size: 9px; letter-spacing: .2em; color: #8c7e74; }
+.ht-process, .ht-about, .ht-contact { padding: 74px clamp(24px, 8vw, 120px) 88px; }
+.ht-process { border-top: 1px solid var(--ht-line); background: #FCF9F5; }
+.ht-section-kicker { margin: 0; display: flex; justify-content: space-between; color: var(--ht-burgundy); font-size: 11px; font-weight: 700; letter-spacing: .17em; }
+.ht-process-heading { margin: 48px auto 50px; max-width: 980px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 54px; }
+.ht-process-heading h2, .ht-about h2, .ht-contact h2 { margin: 0; font-family: var(--ht-serif); font-size: clamp(34px, 4vw, 52px); line-height: 1.5; letter-spacing: .055em; font-weight: 600; }
+.ht-process-heading > p, .ht-about-grid > p, .ht-contact-inner > div > p { margin: 0; color: var(--ht-muted); font-size: 17px; line-height: 2; }
+.ht-process-list { max-width: 980px; margin: 0 auto; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--ht-line); border-bottom: 1px solid var(--ht-line); }
+.ht-process-list li { min-height: 138px; padding: 18px 16px; border-right: 1px solid var(--ht-line); display: flex; flex-direction: column; align-items: flex-start; }
+.ht-process-list li:first-child { border-left: 1px solid var(--ht-line); }
+.ht-process-list li span { color: var(--ht-burgundy); font-size: 12px; font-weight: 700; }
+.ht-process-list li strong { margin-top: 8px; font-size: 17px; }
+.ht-process-list li p { margin: 6px 0 0; color: var(--ht-muted); font-size: 15px; line-height: 1.7; }
+.ht-about { border-top: 1px solid var(--ht-line); }
+.ht-about-grid { max-width: 980px; margin: 50px auto 0; display: grid; grid-template-columns: 1.1fr .9fr; gap: 54px; align-items: start; }
+.ht-contact { background: var(--ht-burgundy); color: var(--ht-ivory); }
+.ht-contact .ht-section-kicker { color: #f4d8d0; }
+.ht-contact-inner { max-width: 980px; margin: 46px auto 0; display: flex; align-items: end; justify-content: space-between; gap: 40px; }
+.ht-contact h2 { font-size: clamp(32px, 3.5vw, 46px); }
+.ht-contact-inner > div > p { margin-top: 20px; color: #f3e7e2; }
+.ht-form-status { margin: 0; padding: 18px 20px; border: 1px solid rgba(255,255,255,.4); font-size: 14px; line-height: 1.8; }
+.ht-status-mark { display: inline-block; width: 7px; height: 7px; margin: 0 8px 1px 0; border-radius: 50%; background: #e8b49f; }
+.ht-footer { min-height: 94px; padding: 20px clamp(24px, 6vw, 96px); display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--ht-line); }
+.ht-footer .ht-wordmark { font-size: 22px; }
+.ht-footer p { margin: 0; color: var(--ht-muted); font-size: 14px; }
+.ht-footer small { color: var(--ht-muted); font-size: 12px; }
+.ht-site a:focus-visible, .ht-site button:focus-visible { outline: 3px solid var(--ht-terracotta); outline-offset: 4px; }
+@media (max-width: 900px) {
+  .ht-header { height: 76px; }
+  .ht-nav { gap: 18px; font-size: 14px; }
+  .ht-nav a:nth-child(3) { display: none; }
+  .ht-hero { min-height: 800px; padding-top: 55px; }
+  .ht-side-note { display: none; }
+}
+@media (max-width: 640px) {
+  html { scroll-padding-top: 74px; }
+  body.ht-site { font-size: 16px; line-height: 1.75; }
+  .ht-header { height: 72px; padding: 0 22px; }
+  .ht-wordmark { font-size: 24px; }
+  .ht-nav { display: none; }
+  .ht-menu-toggle { width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; border: 1px solid var(--ht-line); border-radius: 50%; background: transparent; color: var(--ht-brown); cursor: pointer; }
+  .ht-menu-toggle span { width: 17px; height: 1px; background: currentColor; transition: transform .2s ease; }
+  .ht-menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .ht-menu-toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
+  .ht-mobile-nav:not([hidden]) { position: absolute; display: grid; top: 71px; left: 0; right: 0; padding: 12px 24px 24px; background: var(--ht-ivory); border-bottom: 1px solid var(--ht-line); box-shadow: 0 16px 22px rgba(41,36,33,.06); }
+  .ht-mobile-nav a { min-height: 56px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ht-line); font-weight: 600; }
+  .ht-mobile-nav a span { color: var(--ht-burgundy); font-size: 12px; }
+  .ht-hero { min-height: auto; padding: 62px 22px 55px; }
+  .ht-hero-inner { width: 100%; }
+  .ht-eyebrow { margin-bottom: 17px; gap: 8px; font-size: 10px; letter-spacing: .14em; }
+  .ht-hero h1 { font-size: clamp(40px, 10.3vw, 48px); line-height: 1.48; letter-spacing: .045em; }
+  .ht-desktop-break { display: none; }
+  .ht-mobile-title-break { display: initial; }
+  .ht-lead { margin-top: 15px; font-size: 18px; line-height: 1.65; letter-spacing: .035em; }
+  .ht-description { margin-top: 12px; font-size: 16px; line-height: 1.8; }
+  .ht-mobile-break { display: initial; }
+  .ht-approach { width: 100%; margin-top: 23px; grid-template-columns: minmax(0,1fr) 24px minmax(0,1fr); gap: 6px; }
+  .ht-approach-card { min-height: 82px; padding: 9px 10px; }
+  .ht-approach-kicker { font-size: 10px; letter-spacing: .035em; }
+  .ht-approach-card strong { margin-top: 3px; font-size: 13px; line-height: 1.5; }
+  .ht-approach-join { font-size: 21px; }
+  .ht-workflow-wrap { margin-top: 23px; width: 100%; }
+  .ht-workflow-label { margin-bottom: 9px; gap: 8px; font-size: 9px; letter-spacing: .11em; }
+  .ht-workflow-label span { font-size: 12px; }
+  .ht-workflow { height: auto; min-height: 168px; grid-template-columns: repeat(2, minmax(0,1fr)); grid-template-rows: repeat(3, 48px); gap: 12px 8px; }
+  .ht-flow-desktop { display: none; }
+  .ht-flow-mobile { display: block; }
+  .ht-step { width: 100%; min-width: 0; min-height: 48px; padding: 4px 8px; background: var(--ht-ivory); }
+  .ht-step:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+  .ht-step:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+  .ht-step:nth-of-type(3) { grid-column: 2; grid-row: 2; }
+  .ht-step:nth-of-type(4) { grid-column: 1; grid-row: 2; }
+  .ht-step:nth-of-type(5) { grid-column: 1 / -1; grid-row: 3; width: 56%; }
+  .ht-step span { font-size: 10px; }
+  .ht-step strong { font-size: 14px; }
+  .ht-actions { width: 100%; margin-top: 22px; flex-direction: column; gap: 10px; }
+  .ht-primary { width: 100%; min-height: 54px; font-size: 16px; }
+  .ht-secondary { min-height: 46px; font-size: 14px; }
+  .ht-hero-note { margin-top: 7px; font-size: 13px; }
+  .ht-process, .ht-about, .ht-contact { padding: 54px 22px 62px; }
+  .ht-section-kicker { font-size: 10px; letter-spacing: .12em; }
+  .ht-process-heading { margin: 34px 0 30px; display: block; }
+  .ht-process-heading h2, .ht-about h2 { font-size: 34px; line-height: 1.55; }
+  .ht-process-heading > p, .ht-about-grid > p, .ht-contact-inner > div > p { margin-top: 18px; font-size: 16px; line-height: 1.9; }
+  .ht-process-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ht-process-list li { min-height: 124px; padding: 14px 12px; border-bottom: 1px solid var(--ht-line); }
+  .ht-process-list li:nth-child(odd) { border-left: 1px solid var(--ht-line); }
+  .ht-process-list li:nth-child(even) { border-right: 1px solid var(--ht-line); }
+  .ht-process-list li:last-child { grid-column: 1 / -1; min-height: 96px; }
+  .ht-process-list li strong { font-size: 16px; }
+  .ht-process-list li p { font-size: 14px; }
+  .ht-about-grid { margin-top: 34px; display: block; }
+  .ht-contact-inner { margin-top: 32px; display: block; }
+  .ht-contact h2 { font-size: 32px; line-height: 1.55; }
+  .ht-form-status { margin-top: 28px; font-size: 14px; }
+  .ht-footer { padding: 23px 22px; flex-wrap: wrap; }
+  .ht-footer p { width: 100%; order: 2; font-size: 13px; }
+  .ht-footer small { margin-left: auto; }
+}
+@media (max-width: 380px) {
+  .ht-hero { padding-right: 18px; padding-left: 18px; }
+  .ht-hero h1 { font-size: 38px; }
+  .ht-approach-kicker { font-size: 9px; }
+  .ht-approach-card strong { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .ht-flow-path path { stroke-dashoffset: 0; }
+}
   </style>
 </head>
-
-<body>
-
-  <header>
-    <a href="#" class="logo">ひとてま。</a>
-    <nav>
-      <a href="#about">ABOUT</a>
-      <a href="#service">SERVICE</a>
-      <a href="#contact">CONTACT</a>
+<body class="ht-site">
+  <a class="ht-skip" href="#main">本文へ移動</a>
+  <header class="ht-header">
+    <a class="ht-wordmark" href="#top" aria-label="Hitotema トップへ">Hitotema<span aria-hidden="true">.</span></a>
+    <nav class="ht-nav" aria-label="メインナビゲーション">
+      <a href="#process">サービス</a>
+      <a href="#process">制作の進め方</a>
+      <a href="#about">Hitotemaについて</a>
+      <a class="ht-nav-cta" href="#contact">相談する <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="ht-menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span>
+    </button>
+    <nav class="ht-mobile-nav" id="mobile-menu" aria-label="モバイルナビゲーション" hidden>
+      <a href="#process">サービス <span>01</span></a>
+      <a href="#process">制作の進め方 <span>02</span></a>
+      <a href="#about">Hitotemaについて <span>03</span></a>
+      <a href="#contact">お問い合わせ <span>04</span></a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">HITOTEMA CREATIVE STUDIO</p>
-      <h1>その一歩先に、<br>ひとてまを。</h1>
-      <p class="hero-text">
-        想いをくみ取り、伝わるカタチに。<br>
-        心が動く、その瞬間をつくる。
-      </p>
+  <main id="main">
+    <section class="ht-hero" id="top" aria-labelledby="hero-title">
+      <div class="ht-hero-inner">
+        <p class="ht-eyebrow"><span class="ht-eyebrow-dot" aria-hidden="true"></span> MARKETING-LED WEB PRODUCTION</p>
+        <h1 id="hero-title">つくる、<br class="ht-mobile-title-break">その先まで<br class="ht-desktop-break">考える<span class="ht-period">。</span></h1>
+        <p class="ht-lead">事業の目的とお客様に合わせて、<br class="ht-mobile-break">伝える順序から整える。</p>
+        <p class="ht-description">企画・情報設計・原稿作成からデザイン・実装まで。<br class="ht-desktop-break">人の判断とAIの制作スピードを組み合わせ、<br class="ht-desktop-break">品質とスピードの両立を目指すWeb制作です。</p>
+        <div class="ht-approach" aria-label="人のマーケティング視点とAIの制作スピードを組み合わせます">
+          <div class="ht-approach-card ht-human">
+            <span class="ht-approach-kicker">HUMAN / 判断と設計</span>
+            <strong>事業と顧客を読み解く</strong>
+          </div>
+          <span class="ht-approach-join" aria-hidden="true">×</span>
+          <div class="ht-approach-card ht-ai">
+            <span class="ht-approach-kicker">AI / 制作の加速</span>
+            <strong>手を動かす速さを高める</strong>
+          </div>
+        </div>
+        <div class="ht-workflow-wrap">
+          <p class="ht-workflow-label">ONE CONTINUOUS PROCESS <span>企画から実装まで</span></p>
+          <div class="ht-workflow" aria-label="企画、情報設計、原稿作成、デザイン、実装の順で進めます">
+            <svg class="ht-flow-path ht-flow-desktop" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true"><path d="M80 30 H920" pathLength="1000" /></svg>
+            <svg class="ht-flow-path ht-flow-mobile" viewBox="0 0 360 220" preserveAspectRatio="none" aria-hidden="true"><path d="M90 28 H270 V104 H90 V180 H180" pathLength="1000" /></svg>
+            <div class="ht-step"><span>01</span><strong>企画</strong></div>
+            <div class="ht-step"><span>02</span><strong>情報設計</strong></div>
+            <div class="ht-step"><span>03</span><strong>原稿作成</strong></div>
+            <div class="ht-step"><span>04</span><strong>デザイン</strong></div>
+            <div class="ht-step ht-step-last"><span>05</span><strong>実装</strong></div>
+          </div>
+        </div>
+        <div class="ht-actions">
+          <a class="ht-primary" href="#contact">まずは相談してみる <span aria-hidden="true">↗</span></a>
+          <a class="ht-secondary" href="#process">制作の進め方を見る <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="ht-hero-note">新規制作・リニューアルのご相談に対応しています</p>
+      </div>
+      <span class="ht-side-note" aria-hidden="true">THOUGHTFUL WEB DESIGN / HITOTEMA</span>
     </section>
 
-    <section class="section" id="about">
-      <p class="section-label">ABOUT</p>
-      <h2>ひとてまが、大切にすること。</h2>
-      <p class="message">
-        ただ、つくるだけではなく。<br>
-        その先にいる人のことを考える。<br>
-        伝えたい想いをくみ取り、<br>
-        見た人の心に届く表現を考える。<br><br>
-        小さな工夫と、もうひとつの視点。<br>
-        そのひとてまが、伝わり方を変えていく。
-      </p>
+    <section class="ht-process" id="process" aria-labelledby="process-title">
+      <div class="ht-section-kicker"><span>HOW WE WORK</span><span>01 — PROCESS</span></div>
+      <div class="ht-process-heading">
+        <h2 id="process-title">見た目を整える前に、<br>伝える理由を整える。</h2>
+        <p>何をつくるかだけでなく、誰に何を届けたいかから考えます。<br>目的に合わせて、必要な情報と表現を一つずつ形にします。</p>
+      </div>
+      <ol class="ht-process-list">
+        <li><span>01</span><strong>企画</strong><p>事業の目的と課題を整理</p></li>
+        <li><span>02</span><strong>情報設計</strong><p>伝える順序と構成を設計</p></li>
+        <li><span>03</span><strong>原稿作成</strong><p>価値が伝わる言葉にする</p></li>
+        <li><span>04</span><strong>Webデザイン</strong><p>読みやすく使いやすい形へ</p></li>
+        <li><span>05</span><strong>実装</strong><p>画面で動くサイトに仕上げる</p></li>
+      </ol>
     </section>
 
-    <section class="section concept">
-      <p class="section-label">OUR PHILOSOPHY</p>
-      <h2>Feel Creative.</h2>
-      <p>
-        感じることから、クリエイティブは始まる。<br>
-        見た人の心が動く。何かが伝わる。<br>
-        そんなコミュニケーションを、デザインと
-        アイデアで生み出していきます。
-      </p>
-    </section>
-
-    <section class="section" id="service">
-      <p class="section-label">SERVICE</p>
-      <h2>できること。</h2>
-
-      <div class="service-list">
-        <div class="service">
-          <h3>Web Design</h3>
-          <p>伝えたい想いを、伝わるWebサイトへ。</p>
-        </div>
-
-        <div class="service">
-          <h3>Creative Direction</h3>
-          <p>課題を整理し、最適な表現と方向性を考える。</p>
-        </div>
-
-        <div class="service">
-          <h3>Marketing Support</h3>
-          <p>届けたい人に、届けたい価値を届ける。</p>
-        </div>
+    <section class="ht-about" id="about" aria-labelledby="about-title">
+      <p class="ht-section-kicker"><span>ABOUT HITOTEMA</span><span>02 — APPROACH</span></p>
+      <div class="ht-about-grid">
+        <h2 id="about-title">一つひとつの判断に、<br>理由を持たせる。</h2>
+        <p>情報の優先順位、言葉の選び方、読みやすさ、使いやすさ。細部を丁寧に整えながら、つくる目的からぶれないWebサイトを目指します。AIは制作を速めるために活用し、何を伝えるか、どう形にするかは人が考えます。</p>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <p class="section-label">CONTACT</p>
-      <h2>一緒に、考えてみませんか。</h2>
-      <p>小さなご相談から、お気軽にどうぞ。</p>
-      <p style="margin-top:25px;font-size:13px;">
-        お問い合わせ窓口は準備中です。
-      </p>
+    <section class="ht-contact" id="contact" aria-labelledby="contact-title">
+      <p class="ht-section-kicker"><span>LET’S TALK</span><span>03 — CONTACT</span></p>
+      <div class="ht-contact-inner">
+        <div>
+          <h2 id="contact-title">まずは、考えていることを<br>お聞かせください。</h2>
+          <p>新規制作やリニューアルのご相談をお待ちしています。<br>内容が整理できていない段階でも、目的から一緒に考えます。</p>
+        </div>
+        <p class="ht-form-status"><span class="ht-status-mark" aria-hidden="true"></span>お問い合わせフォームは準備中です。<br>公開前にフォームURLを設定します。</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <span>ひとてま。 HITOTEMA</span>
-    <span>© 2026 HITOTEMA</span>
+  <footer class="ht-footer">
+    <a class="ht-wordmark" href="#top">Hitotema<span aria-hidden="true">.</span></a>
+    <p>つくる、その先まで考える。</p>
+    <small>© Hitotema</small>
   </footer>
 
+  <script>
+(() => {
+  const hero = document.querySelector('.ht-hero');
+  const menuButton = document.querySelector('.ht-menu-toggle');
+  const menu = document.querySelector('.ht-mobile-nav');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  requestAnimationFrame(() => hero?.classList.add('is-ready'));
+
+  if (!menuButton || !menu) return;
+  const setOpen = (open) => {
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    menu.hidden = !open;
+  };
+  menuButton.addEventListener('click', () => {
+    setOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+  });
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+  reduceMotion.addEventListener?.('change', () => {
+    if (reduceMotion.matches) hero?.classList.remove('is-ready');
+    else requestAnimationFrame(() => hero?.classList.add('is-ready'));
+  });
+})();
+  </script>
 </body>
 </html>
