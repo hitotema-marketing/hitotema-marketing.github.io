@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ひとてま｜その一歩先に、ひとてまを。">
+  <title>ひとてま | その一歩先に、ひとてまを。</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Helvetica Neue", "Noto Sans JP",
+        sans-serif;
+      color: #252b29;
+      background: #f8f8f5;
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      height: 90px;
+      padding: 0 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+      font-size: 13px;
+    }
+
+    .hero {
+      min-height: 680px;
+      padding: 130px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #e9ede8;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: #718078;
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-text {
+      margin-top: 35px;
+      font-size: 15px;
+      color: #66716b;
+      letter-spacing: 0.08em;
+    }
+
+    .section {
+      padding: 110px 10%;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: #849087;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-bottom: 35px;
+    }
+
+    .message {
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 2.5;
+    }
+
+    .concept {
+      background: #303c36;
+      color: #fff;
+    }
+
+    .concept .section-label {
+      color: #b7c3ba;
+    }
+
+    .concept h2 {
+      font-size: 38px;
+    }
+
+    .concept p {
+      max-width: 700px;
+      line-height: 2.4;
+      color: #e0e6e1;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 50px;
+    }
+
+    .service {
+      border-top: 1px solid #cbd1ca;
+      padding-top: 25px;
+    }
+
+    .service h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .service p {
+      font-size: 14px;
+      color: #68736c;
+    }
+
+    .contact {
+      background: #e9ede8;
+      text-align: center;
+    }
+
+    footer {
+      padding: 35px 8%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #778078;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        height: 75px;
+      }
+
+      nav {
+        gap: 15px;
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: 550px;
+        padding: 90px 8%;
+      }
+
+      .section {
+        padding: 80px 8%;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#" class="logo">ひとてま。</a>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#service">SERVICE</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">HITOTEMA CREATIVE STUDIO</p>
+      <h1>その一歩先に、<br>ひとてまを。</h1>
+      <p class="hero-text">
+        想いをくみ取り、伝わるカタチに。<br>
+        心が動く、その瞬間をつくる。
+      </p>
+    </section>
+
+    <section class="section" id="about">
+      <p class="section-label">ABOUT</p>
+      <h2>ひとてまが、大切にすること。</h2>
+      <p class="message">
+        ただ、つくるだけではなく。<br>
+        その先にいる人のことを考える。<br>
+        伝えたい想いをくみ取り、<br>
+        見た人の心に届く表現を考える。<br><br>
+        小さな工夫と、もうひとつの視点。<br>
+        そのひとてまが、伝わり方を変えていく。
+      </p>
+    </section>
+
+    <section class="section concept">
+      <p class="section-label">OUR PHILOSOPHY</p>
+      <h2>Feel Creative.</h2>
+      <p>
+        感じることから、クリエイティブは始まる。<br>
+        見た人の心が動く。何かが伝わる。<br>
+        そんなコミュニケーションを、デザインと
+        アイデアで生み出していきます。
+      </p>
+    </section>
+
+    <section class="section" id="service">
+      <p class="section-label">SERVICE</p>
+      <h2>できること。</h2>
+
+      <div class="service-list">
+        <div class="service">
+          <h3>Web Design</h3>
+          <p>伝えたい想いを、伝わるWebサイトへ。</p>
+        </div>
+
+        <div class="service">
+          <h3>Creative Direction</h3>
+          <p>課題を整理し、最適な表現と方向性を考える。</p>
+        </div>
+
+        <div class="service">
+          <h3>Marketing Support</h3>
+          <p>届けたい人に、届けたい価値を届ける。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <p class="section-label">CONTACT</p>
+      <h2>一緒に、考えてみませんか。</h2>
+      <p>小さなご相談から、お気軽にどうぞ。</p>
+      <p style="margin-top:25px;font-size:13px;">
+        お問い合わせ窓口は準備中です。
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>ひとてま。 HITOTEMA</span>
+    <span>© 2026 HITOTEMA</span>
+  </footer>
+
+</body>
+</html>
