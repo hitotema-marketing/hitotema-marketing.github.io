@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 80" role="img" aria-labelledby="title">
+  <title id="title" lang="en">HITOTEMA</title>
+  <g fill="#ef6b16" transform="scale(2.1)">
+    <path d="M4 30 1 36l13-3-2-6zM9 18l-6 2 8 8 4-5zM17 8l-5 1 5 11 5-3zM29 3l-5-1 1 14 6-1zM38 8l-5-3-3 12 6 2z"/>
+  </g>
+  <text lang="en" x="96" y="54" fill="#171615" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="1">HITOTEMA</text>
+</svg>
